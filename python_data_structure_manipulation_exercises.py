@@ -167,37 +167,178 @@ grade_count(students)
 
 # 5. What is each student's grade average?
 
+def grade_avg(students):
+    student_grade_avg = []
+    for student in students:
+        grade_total = 0
+        for grade in student["grades"]:
+            grade_total += int(grade)
+        avg_grade = grade_total
+        student_grade_avg.append(avg_grade/4)
+    return student_grade_avg
 
+grade_avg(students)
 
 # 6. How many pets does each student have?
 
+def pet_count(students):
+    pet_count_list = []
+    for student in students:
+        pet_count_list.append(len(student["pets"]))
+    return pet_count_list
+
+pet_count(students)
 
 # 7. How many students are in web development? data science?
 
+def class_count(students):
+    web_dev_count = 0
+    data_sci_count = 0
+    for student in students:
+        if student["course"] == "web development":
+            web_dev_count += 1
+        elif student["course"] == "data science":
+            data_sci_count += 1
+        else:
+            pass
+    return (f"{web_dev_count} students in web dev and {data_sci_count} students in data sci")
+
+class_count(students)
 
 # 8. What is the average number of pets for students in web development?
 
+def pets_for_web_dev_students(students):
+    pet_count = 0
+    web_dev_student = 0
+    for student in students:
+        if student["course"] == "web development":
+            pet_count += len(student["pets"])
+            web_dev_student += 1
+    return pet_count / web_dev_student
+
+pets_for_web_dev_students(students)
 
 # 9. What is the average pet age for students in data science?
 
+def pet_age_data_science_students(students):
+    num_of_pets = 0
+    total_pet_age = 0
+    for student in students:
+        if student["course"] == "data science":
+            num_of_pets += len(student["pets"])
+            for pet in student["pets"]:
+                total_pet_age += pet["age"]
+    return total_pet_age / num_of_pets
+            
+pet_age_data_science_students(students)
 
 # 10. What is most frequent coffee preference for data science students?
 
+def data_sci_coffee_pref(students):
+    light_count = 0
+    medium_count = 0
+    dark_count = 0
+    coffee_count = []
+    for student in students:
+        if student["course"] == "data science":
+            if student["coffee_preference"] == "light":
+                light_count += 1
+            elif student["coffee_preference"] == "medium":
+                medium_count += 1
+            elif student["coffee_preference"] == "dark":
+                dark_count += 1
+    coffee_count.append(light_count)
+    coffee_count.append(medium_count)
+    coffee_count.append(dark_count)
+    return f"{coffee_count[0]} light, {coffee_count[1]} medium, {coffee_count[2]} dark" , max(coffee_count)
+
+data_sci_coffee_pref(students)
 
 # 11. What is the least frequent coffee preference for web development students?
 
+def web_dev_least_coffee_pref(students):
+    light_count = 0
+    medium_count = 0
+    dark_count = 0
+    coffee_count = []
+    for student in students:
+        if student["course"] == "web development":
+            if student["coffee_preference"] == "light":
+                light_count += 1
+            elif student["coffee_preference"] == "medium":
+                medium_count += 1
+            elif student["coffee_preference"] == "dark":
+                dark_count += 1
+    coffee_count.append(light_count)
+    coffee_count.append(medium_count)
+    coffee_count.append(dark_count)
+    return f"{coffee_count[0]} light, {coffee_count[1]} medium, {coffee_count[2]} dark" , min(coffee_count)
+
+web_dev_least_coffee_pref(students)
 
 # 12. What is the average grade for students with at least 2 pets?
 
+def avg_grade_two_pets(students):
+    total_grade = 0
+    num_of_grades = 0
+    for student in students:
+        if len(student["pets"]) >= 2:
+            for grade in student["grades"]:
+                num_of_grades += 1
+                total_grade += grade
+    return (total_grade/num_of_grades)
+
+avg_grade_two_pets(students)
 
 # 13. How many students have 3 pets?
 
+def students_with_three_pets(students):
+    student_count = 0
+    for student in students:
+        if len(student["pets"]) == 3:
+            student_count += 1
+    return student_count
+
+students_with_three_pets(students)
 
 # 14. What is the average grade for students with 0 pets?
 
+def avg_grade_students_zero_pets(students):
+    grade_total = 0
+    grade_count = 0
+    for student in students:
+        if len(student["pets"]) == 0:
+            for grade in student["grades"]:
+                grade_count += 1
+                grade_total += grade
+    return grade_total / grade_count
+
+avg_grade_students_zero_pets(students)
 
 # 15. What is the average grade for web development students? data science students?
 
+def avg_grade_per_class(students):
+    #ds = datascience
+    #wd = webdev
+    ds_total_grade = 0
+    ds_grade_count = 0
+    wd_total_grade = 0
+    wd_grade_count = 0
+    for student in students:
+        if student["course"] == "data science":
+            for grade in student["grades"]:
+                ds_grade_count += 1
+                ds_total_grade += grade
+        elif student["course"] == "web development":
+            for grade in student["grades"]:
+                wd_grade_count += 1
+                wd_total_grade += grade
+                
+    ds_avg_grade = ds_total_grade / ds_grade_count
+    wd_avg_grade = wd_total_grade / wd_grade_count
+    return(f"datascience avg grade is {ds_avg_grade}, web development avg grade is {wd_avg_grade}")
+
+avg_grade_per_class(students)
 
 # 16. What is the average grade range (i.e. highest grade - lowest grade) for dark coffee drinkers?
 
