@@ -342,15 +342,98 @@ avg_grade_per_class(students)
 
 # 16. What is the average grade range (i.e. highest grade - lowest grade) for dark coffee drinkers?
 
+def avg_grade_range_dark_coffee_drinker(students):
+    min_grade = 100
+    max_grade = 0
+
+    for student in students:
+        if student["coffee_preference"] == "dark":
+            for grade in student["grades"]:
+                if min_grade > grade:
+                    min_grade = grade
+                elif max_grade < grade:
+                    max_grade = grade
+
+    return range(min_grade,max_grade)
+
+avg_grade_range_dark_coffee_drinker(students)
+
 
 # 17. What is the average number of pets for medium coffee drinkers?
 
+def avg_num_pets_med_coffee(students):
+    total_num_pets = 0
+    number_of_students = 0
+    for student in students:
+        if student["coffee_preference"] == "medium":
+            number_of_students += 1
+            total_num_pets += len(student["pets"])
+    return total_num_pets / number_of_students
+
+avg_num_pets_med_coffee (students)
 
 # 18. What is the most common type of pet for web development students?
 
+def common_pet_wd_students(students):
+    horse = 0
+    cat = 0
+    dog = 0
+    compare = []
+    for student in students:
+        if student["course"] == "web development":
+            for pet in student["pets"]:
+                if pet["species"] == "horse":
+                    horse += 1
+                elif pet["species"] == "cat":
+                    cat += 1
+                elif pet["species"] == "dog":
+                    dog += 1
+    compare.append(horse)
+    compare.append(cat)
+    compare.append(dog)
+    return(f"{horse} horses, {cat} cats, {dog} dogs and the most was {max(compare)}")
+        
+common_pet_wd_students(students)
 
 # 19. What is the average name length?
 
+def avg_name_length(students):
+    letters_in_all_names = 0
+    num_of_students = 0
+    for student in students:
+        num_of_students += 1
+        name = student["student"]
+        for letter in name:
+            if letter.isalpha():
+                letters_in_all_names += 1
+            else:
+                pass
+    return letters_in_all_names / num_of_students
+
+# If you include "-" as a part of someones name
+def avg_name_length(students):
+    letters_in_all_names = 0
+    num_of_students = 0
+    for student in students:
+        num_of_students += 1
+        name = student["student"]
+        for letter in name:
+            if letter.isalpha() or letter == "-":
+                letters_in_all_names += 1
+            else:
+                pass
+    return letters_in_all_names / num_of_students
+
+avg_name_length(students)
 
 # 20. What is the highest pet age for light coffee drinkers?
 
+
+def highest_pet_age_light_coffee_drinkers(students):
+    highest_pet_age = 0
+    for student in students:
+        if student["coffee_preference"] == "light":
+            for pet in student["pets"]:
+                if int(pet["age"]) > highest_pet_age:
+                    highest_pet_age = int(pet["age"])
+    return highest_pet_age
