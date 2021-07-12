@@ -222,21 +222,22 @@ books = [
     {
         "title": "The Subtle Art of Not Giving a F*ck",
         "author": "Mark Manson",
-        "genre": ["Self-help book"]
+        "genre's": ["Self-help book"]
     },
     {
         "title": "Breath",
         "author": "James Nestor",
-        "genre": ["Self-help book", "Creative nonfiction"]
+        "genre's": ["Self-help book", "Creative nonfiction"]
     },
     {
         "title": "1984",
         "author": "George Orwell",
-        "genre": ["Science fiction","political fiction","Dystopian fiction","Social science fiction"]
+        "genre's": ["Science fiction","political fiction","Dystopian fiction","Social science fiction"]
     }
 ]
 user_genre = input("what kind of book genre are you looking for: ")
 for book in books:
-    if book["genre"] == user_genre:
-        print(book)
+    for genre in book["genre's"]:
+        if genre == user_genre:
+            print(book)
     
