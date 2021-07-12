@@ -158,3 +158,80 @@ def fizz_buzz(num):
             print(i)
 
 fizz_buzz(num)
+
+
+
+keep_going = True
+while keep_going == True:
+    i = input("pick a number preferably 3-10:  ---'quit' to exit")
+    if i.isdigit():
+        print("number | squared | cubed")
+        print("-------|---------|------")
+        for num in range(1,int(i)):
+            print(f" {num: <4}  | {num ** 2: <6}  | {num ** 3}")
+    else:
+        keep_going = False
+
+
+
+
+def grade_template():
+    more_grades = "y"
+    while more_grades == "y":
+        grade = input("what grade did you get on this test?: ---'quit' to exit")
+        if grade.isdigit:
+            num = int(grade)
+            if num >= 0 and num <= 59:
+                if num >= 55:
+                    print(f"{num} the range for 'F+' is 55-59")
+                else:
+                    print(f"{num} the range for 'F' is 0-54")
+            elif num >= 60 and num <= 66:
+                if num <= 62:
+                    print(f"{num} the range for 'd-' is 60-62")
+                elif num >= 64:
+                    print(f"{num} the range for 'd+' is 64-66")
+                else:
+                    print(f"{num} the range for 'd' is 63")
+            elif num >= 67 and num <= 79:
+                if num <= 69:
+                    print(f"{num} the range for 'c-' is 67-69")
+                elif num >= 77:
+                    print(f"{num} the range for 'c+' is 77-79")
+                else:
+                    print(f"{num} the range for 'c' is 70-76")
+            elif num >= 80 and num <= 87:
+                if num <= 82:
+                    print(f"{num} the range for 'b-' is 80-82")
+                elif num >= 85:
+                    print(f"{num} the range for 'b+' is 85-87")
+                else:
+                    print(f"{num} the range for 'b' is 83-84")
+            elif num >= 88 and num <= 100:
+                if num <= 90:
+                    print(f"{num} the range for 'a-' is 88-90")
+                elif num >= 98:
+                    print(f"{num} the range for 'a+' is 98-100")
+                else:
+                    print(f"{num} the range for 'a' is 91-97")
+            else:
+                pass
+
+
+books = [
+    {
+        "title": "The Subtle Art of Not Giving a F*ck"
+        "author": "Mark Manson"
+        "genre": ["Self-help book"]
+    },
+    {
+        "title": "Breath"
+        "author": "James Nestor"
+        "genre": ["Self-help book", "Creative nonfiction"]
+    },
+    {
+        "title": "1984"
+        "author": "George Orwell"
+        "genre": ["Science fiction","political fiction","Dystopian fiction","Social science fiction"]
+    }
+]

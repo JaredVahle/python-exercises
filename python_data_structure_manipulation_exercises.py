@@ -122,7 +122,7 @@ students = [
 
 len(students)
 
-# 2. How many students prefer light coffee? For each type of coffee roast?
+# 2. How many students prefer light coffee? For each type of coffee roast? ##
 
 def light_coffee_count(students):
     i = 0
@@ -155,7 +155,7 @@ def unique_animal_list(students):
 
 unique_animal_list(students)
 
-# 4. How many grades does each student have? Do they all have the same number of grades?
+# 4. How many grades does each student have? Do they all have the same number of grades? ##
 
 def grade_count(students):
     grade_count = []
@@ -410,8 +410,19 @@ def avg_name_length(students):
                 pass
     return letters_in_all_names / num_of_students
 
-# If you include "-" as a part of someones name
+# name
 def avg_name_length(students):
+    letters = 0
+    num_of_students = 0
+    for student in students:
+        num_of_students += 1
+        letters += len(student["student"])
+    return letters_in_all_names / num_of_students
+
+avg_name_length(students)
+
+# If you include "-" as a part of someones name
+def avg_name_length_with_dash(students):
     letters_in_all_names = 0
     num_of_students = 0
     for student in students:
@@ -437,3 +448,5 @@ def highest_pet_age_light_coffee_drinkers(students):
                 if int(pet["age"]) > highest_pet_age:
                     highest_pet_age = int(pet["age"])
     return highest_pet_age
+
+highest_pet_age_light_coffee_drinkers(students)
