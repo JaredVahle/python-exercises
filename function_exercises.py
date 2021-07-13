@@ -65,6 +65,7 @@ def remove_vowels(word):
 def normalize_name(name):
     # creating an empty string
     normalized_name = ""
+    name = name.lower()
     # making a trip wire for my while statement
     starter = True
     while starter == True:
