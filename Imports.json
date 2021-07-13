@@ -1,0 +1,400 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "fa63cea0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import function_exercises as fe"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "437656de",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "fe.is_vowel(\"h\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "79efe82c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "20.0"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "fe.calculate_tip(100,.2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "495df0b2",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'this_is_a_function'"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "fe.normalize_name(\"    4  ## This is a function\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "24c1b899",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from itertools import combinations,permutations,chain,product"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "5fb67293",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[('a', 1),\n",
+       " ('a', 2),\n",
+       " ('a', 3),\n",
+       " ('b', 1),\n",
+       " ('b', 2),\n",
+       " ('b', 3),\n",
+       " ('c', 1),\n",
+       " ('c', 2),\n",
+       " ('c', 3)]"
+      ]
+     },
+     "execution_count": 31,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "list(product(\"abc\",[1,2,3]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "c7dfff72",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[('a', 'b'), ('a', 'c'), ('a', 'd'), ('b', 'c'), ('b', 'd'), ('c', 'd')]"
+      ]
+     },
+     "execution_count": 17,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "list(combinations(\"abcd\",2))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "5c50f7f1",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[('a', 'b'),\n",
+       " ('a', 'c'),\n",
+       " ('a', 'd'),\n",
+       " ('b', 'a'),\n",
+       " ('b', 'c'),\n",
+       " ('b', 'd'),\n",
+       " ('c', 'a'),\n",
+       " ('c', 'b'),\n",
+       " ('c', 'd'),\n",
+       " ('d', 'a'),\n",
+       " ('d', 'b'),\n",
+       " ('d', 'c')]"
+      ]
+     },
+     "execution_count": 33,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "list(permutations(\"abcd\",2))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "0ba939e4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import json"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 48,
+   "id": "5acf1279",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'cells': [{'cell_type': 'code',\n",
+       "   'execution_count': 1,\n",
+       "   'id': 'fa63cea0',\n",
+       "   'metadata': {},\n",
+       "   'outputs': [],\n",
+       "   'source': ['import function_exercises as fe']},\n",
+       "  {'cell_type': 'code',\n",
+       "   'execution_count': 2,\n",
+       "   'id': 'e37d9ba3',\n",
+       "   'metadata': {},\n",
+       "   'outputs': [{'data': {'text/plain': ['False']},\n",
+       "     'execution_count': 2,\n",
+       "     'metadata': {},\n",
+       "     'output_type': 'execute_result'}],\n",
+       "   'source': ['fe.is_vowel(\"h\")']},\n",
+       "  {'cell_type': 'code',\n",
+       "   'execution_count': 3,\n",
+       "   'id': '16e77ea7',\n",
+       "   'metadata': {},\n",
+       "   'outputs': [{'data': {'text/plain': ['20.0']},\n",
+       "     'execution_count': 3,\n",
+       "     'metadata': {},\n",
+       "     'output_type': 'execute_result'}],\n",
+       "   'source': ['fe.calculate_tip(100,.2)']},\n",
+       "  {'cell_type': 'code',\n",
+       "   'execution_count': 4,\n",
+       "   'id': '726249da',\n",
+       "   'metadata': {},\n",
+       "   'outputs': [{'data': {'text/plain': [\"'this_is_a_function'\"]},\n",
+       "     'execution_count': 4,\n",
+       "     'metadata': {},\n",
+       "     'output_type': 'execute_result'}],\n",
+       "   'source': ['fe.normalize_name(\"    4  ## This is a function\")']},\n",
+       "  {'cell_type': 'code',\n",
+       "   'execution_count': 29,\n",
+       "   'id': 'b5aeed73',\n",
+       "   'metadata': {},\n",
+       "   'outputs': [],\n",
+       "   'source': ['from itertools import combinations,permutations,chain,product']},\n",
+       "  {'cell_type': 'code',\n",
+       "   'execution_count': 31,\n",
+       "   'id': '555d5f00',\n",
+       "   'metadata': {},\n",
+       "   'outputs': [{'data': {'text/plain': [\"[('a', 1),\\n\",\n",
+       "       \" ('a', 2),\\n\",\n",
+       "       \" ('a', 3),\\n\",\n",
+       "       \" ('b', 1),\\n\",\n",
+       "       \" ('b', 2),\\n\",\n",
+       "       \" ('b', 3),\\n\",\n",
+       "       \" ('c', 1),\\n\",\n",
+       "       \" ('c', 2),\\n\",\n",
+       "       \" ('c', 3)]\"]},\n",
+       "     'execution_count': 31,\n",
+       "     'metadata': {},\n",
+       "     'output_type': 'execute_result'}],\n",
+       "   'source': ['list(product(\"abc\",[1,2,3]))']},\n",
+       "  {'cell_type': 'code',\n",
+       "   'execution_count': 17,\n",
+       "   'id': '26f4627b',\n",
+       "   'metadata': {},\n",
+       "   'outputs': [{'data': {'text/plain': [\"[('a', 'b'), ('a', 'c'), ('a', 'd'), ('b', 'c'), ('b', 'd'), ('c', 'd')]\"]},\n",
+       "     'execution_count': 17,\n",
+       "     'metadata': {},\n",
+       "     'output_type': 'execute_result'}],\n",
+       "   'source': ['list(combinations(\"abcd\",2))']},\n",
+       "  {'cell_type': 'code',\n",
+       "   'execution_count': 33,\n",
+       "   'id': '9c6ad552',\n",
+       "   'metadata': {},\n",
+       "   'outputs': [{'data': {'text/plain': [\"[('a', 'b'),\\n\",\n",
+       "       \" ('a', 'c'),\\n\",\n",
+       "       \" ('a', 'd'),\\n\",\n",
+       "       \" ('b', 'a'),\\n\",\n",
+       "       \" ('b', 'c'),\\n\",\n",
+       "       \" ('b', 'd'),\\n\",\n",
+       "       \" ('c', 'a'),\\n\",\n",
+       "       \" ('c', 'b'),\\n\",\n",
+       "       \" ('c', 'd'),\\n\",\n",
+       "       \" ('d', 'a'),\\n\",\n",
+       "       \" ('d', 'b'),\\n\",\n",
+       "       \" ('d', 'c')]\"]},\n",
+       "     'execution_count': 33,\n",
+       "     'metadata': {},\n",
+       "     'output_type': 'execute_result'}],\n",
+       "   'source': ['list(permutations(\"abcd\",2))']},\n",
+       "  {'cell_type': 'code',\n",
+       "   'execution_count': 43,\n",
+       "   'id': '51167f29',\n",
+       "   'metadata': {},\n",
+       "   'outputs': [],\n",
+       "   'source': ['import json']},\n",
+       "  {'cell_type': 'code',\n",
+       "   'execution_count': 45,\n",
+       "   'id': 'ab24775b',\n",
+       "   'metadata': {},\n",
+       "   'outputs': [{'ename': 'UnicodeDecodeError',\n",
+       "     'evalue': \"'utf-8' codec can't decode byte 0xd1 in position 8: invalid continuation byte\",\n",
+       "     'output_type': 'error',\n",
+       "     'traceback': ['\\x1b[0;31m---------------------------------------------------------------------------\\x1b[0m',\n",
+       "      '\\x1b[0;31mUnicodeDecodeError\\x1b[0m                        Traceback (most recent call last)',\n",
+       "      \"\\x1b[0;32m<ipython-input-45-a3fc1e7e9251>\\x1b[0m in \\x1b[0;36m<module>\\x1b[0;34m\\x1b[0m\\n\\x1b[0;32m----> 1\\x1b[0;31m \\x1b[0mjson\\x1b[0m\\x1b[0;34m.\\x1b[0m\\x1b[0mload\\x1b[0m\\x1b[0;34m(\\x1b[0m\\x1b[0mopen\\x1b[0m\\x1b[0;34m(\\x1b[0m\\x1b[0;34m'profiles.json.webarchive'\\x1b[0m\\x1b[0;34m)\\x1b[0m\\x1b[0;34m)\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0m\\n\\x1b[0m\",\n",
+       "      '\\x1b[0;32m/usr/local/anaconda3/lib/python3.8/json/__init__.py\\x1b[0m in \\x1b[0;36mload\\x1b[0;34m(fp, cls, object_hook, parse_float, parse_int, parse_constant, object_pairs_hook, **kw)\\x1b[0m\\n\\x1b[1;32m    291\\x1b[0m     \\x1b[0mkwarg\\x1b[0m\\x1b[0;34m;\\x1b[0m \\x1b[0motherwise\\x1b[0m\\x1b[0;31m \\x1b[0m\\x1b[0;31m`\\x1b[0m\\x1b[0;31m`\\x1b[0m\\x1b[0mJSONDecoder\\x1b[0m\\x1b[0;31m`\\x1b[0m\\x1b[0;31m`\\x1b[0m \\x1b[0;32mis\\x1b[0m \\x1b[0mused\\x1b[0m\\x1b[0;34m.\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0m\\n\\x1b[1;32m    292\\x1b[0m     \"\"\"\\n\\x1b[0;32m--> 293\\x1b[0;31m     return loads(fp.read(),\\n\\x1b[0m\\x1b[1;32m    294\\x1b[0m         \\x1b[0mcls\\x1b[0m\\x1b[0;34m=\\x1b[0m\\x1b[0mcls\\x1b[0m\\x1b[0;34m,\\x1b[0m \\x1b[0mobject_hook\\x1b[0m\\x1b[0;34m=\\x1b[0m\\x1b[0mobject_hook\\x1b[0m\\x1b[0;34m,\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0m\\n\\x1b[1;32m    295\\x1b[0m         \\x1b[0mparse_float\\x1b[0m\\x1b[0;34m=\\x1b[0m\\x1b[0mparse_float\\x1b[0m\\x1b[0;34m,\\x1b[0m \\x1b[0mparse_int\\x1b[0m\\x1b[0;34m=\\x1b[0m\\x1b[0mparse_int\\x1b[0m\\x1b[0;34m,\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0m\\n',\n",
+       "      '\\x1b[0;32m/usr/local/anaconda3/lib/python3.8/codecs.py\\x1b[0m in \\x1b[0;36mdecode\\x1b[0;34m(self, input, final)\\x1b[0m\\n\\x1b[1;32m    320\\x1b[0m         \\x1b[0;31m# decode input (taking the buffer into account)\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0m\\n\\x1b[1;32m    321\\x1b[0m         \\x1b[0mdata\\x1b[0m \\x1b[0;34m=\\x1b[0m \\x1b[0mself\\x1b[0m\\x1b[0;34m.\\x1b[0m\\x1b[0mbuffer\\x1b[0m \\x1b[0;34m+\\x1b[0m \\x1b[0minput\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0m\\n\\x1b[0;32m--> 322\\x1b[0;31m         \\x1b[0;34m(\\x1b[0m\\x1b[0mresult\\x1b[0m\\x1b[0;34m,\\x1b[0m \\x1b[0mconsumed\\x1b[0m\\x1b[0;34m)\\x1b[0m \\x1b[0;34m=\\x1b[0m \\x1b[0mself\\x1b[0m\\x1b[0;34m.\\x1b[0m\\x1b[0m_buffer_decode\\x1b[0m\\x1b[0;34m(\\x1b[0m\\x1b[0mdata\\x1b[0m\\x1b[0;34m,\\x1b[0m \\x1b[0mself\\x1b[0m\\x1b[0;34m.\\x1b[0m\\x1b[0merrors\\x1b[0m\\x1b[0;34m,\\x1b[0m \\x1b[0mfinal\\x1b[0m\\x1b[0;34m)\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0m\\n\\x1b[0m\\x1b[1;32m    323\\x1b[0m         \\x1b[0;31m# keep undecoded input until the next call\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0m\\n\\x1b[1;32m    324\\x1b[0m         \\x1b[0mself\\x1b[0m\\x1b[0;34m.\\x1b[0m\\x1b[0mbuffer\\x1b[0m \\x1b[0;34m=\\x1b[0m \\x1b[0mdata\\x1b[0m\\x1b[0;34m[\\x1b[0m\\x1b[0mconsumed\\x1b[0m\\x1b[0;34m:\\x1b[0m\\x1b[0;34m]\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0;34m\\x1b[0m\\x1b[0m\\n',\n",
+       "      \"\\x1b[0;31mUnicodeDecodeError\\x1b[0m: 'utf-8' codec can't decode byte 0xd1 in position 8: invalid continuation byte\"]}],\n",
+       "   'source': [\"json.load(open('profiles.json.webarchive'))\"]},\n",
+       "  {'cell_type': 'code',\n",
+       "   'execution_count': 36,\n",
+       "   'id': '1c09b547',\n",
+       "   'metadata': {},\n",
+       "   'outputs': [{'data': {'text/plain': ['4']},\n",
+       "     'execution_count': 36,\n",
+       "     'metadata': {},\n",
+       "     'output_type': 'execute_result'}],\n",
+       "   'source': [\"len(json.load(open('profiles.json')))\"]},\n",
+       "  {'cell_type': 'code',\n",
+       "   'execution_count': 37,\n",
+       "   'id': 'c302aac1',\n",
+       "   'metadata': {},\n",
+       "   'outputs': [],\n",
+       "   'source': [\"items = json.load(open('profiles.json'))\"]},\n",
+       "  {'cell_type': 'code',\n",
+       "   'execution_count': None,\n",
+       "   'id': '97f39b56',\n",
+       "   'metadata': {},\n",
+       "   'outputs': [],\n",
+       "   'source': ['for item in items\\n', '    ']}],\n",
+       " 'metadata': {'kernelspec': {'display_name': 'Python 3',\n",
+       "   'language': 'python',\n",
+       "   'name': 'python3'},\n",
+       "  'language_info': {'codemirror_mode': {'name': 'ipython', 'version': 3},\n",
+       "   'file_extension': '.py',\n",
+       "   'mimetype': 'text/x-python',\n",
+       "   'name': 'python',\n",
+       "   'nbconvert_exporter': 'python',\n",
+       "   'pygments_lexer': 'ipython3',\n",
+       "   'version': '3.8.8'}},\n",
+       " 'nbformat': 4,\n",
+       " 'nbformat_minor': 5}"
+      ]
+     },
+     "execution_count": 48,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "json.load(open('profiles.json'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "id": "6ed34c0f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "4"
+      ]
+     },
+     "execution_count": 36,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "len(json.load(open('profiles.json')))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "id": "cfa6288d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "items = json.load(open('profiles.json'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ac7efb9a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "for item in items\n",
+    "    "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

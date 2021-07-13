@@ -35,17 +35,16 @@ def handle_commas(num):
 
 def get_letter_grade(grade):
     #checks if the grade is an int type that can be used below
-    if grade.is_digit() == True:
-        if grade <= 59:
-            return "F"
-        elif grade >= 60 and grade <= 69:
-            return "D"
-        elif grade >= 70 and grade <= 79:
-            return "C"
-        elif grade >=80  and grade <= 89:
-            return "B"
-        elif grade >= 90 and grade <= 100:
-            return "A"
+    if grade <= 59:
+        return "F"
+    elif grade >= 60 and grade <= 69:
+        return "D"
+    elif grade >= 70 and grade <= 79:
+        return "C"
+    elif grade >=80  and grade <= 89:
+        return "B"
+    elif grade >= 90 and grade <= 100:
+        return "A"
 
 def remove_vowels(word):
     # Made a new empty string that will hold the new word
